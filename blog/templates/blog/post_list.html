@@ -4,19 +4,16 @@
 
 <body>
     <div>
-        <p>Hello</p>
-    </div>
-    <div>
-        <p>Published : 26.01.2020</p>
-        <a href="">First Post!!!!!</a>
-        <p>content of first post</p>
-    </div>
-    <div>
-        <p> Published : 26.02.2020</p>
-        <a href="">Second Post!!!!!</a>
-        <p>Content of Second POST</p>
+        <h1><a href="/">MY BLOG</a></h1>
     </div>
 
+    {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
 </body>
 
 </html>
